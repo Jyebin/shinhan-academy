@@ -1,5 +1,8 @@
 package com.example.ShinHanAc.ch15.sec02.sec05.exam03;
 
+import lombok.ToString;
+
+@ToString
 public class Person implements Comparable<Person> {
     public String name;
     public int age;
