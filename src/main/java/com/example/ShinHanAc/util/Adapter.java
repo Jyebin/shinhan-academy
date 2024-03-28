@@ -1,6 +1,5 @@
 package com.example.ShinHanAc.util;
 
-import static com.example.ShinHanAc.util.Main.connect;
 
 public class Adapter implements Game110V{
     private Electric220V e220;
@@ -11,6 +10,5 @@ public class Adapter implements Game110V{
     @Override
     public void on(){ //재정의
         this.e220.powerOn(); //e220의 powerOn을 실행 -> adapter가 connector에 들어갈 수 있게 구현 완료
-//        
     }
 }
