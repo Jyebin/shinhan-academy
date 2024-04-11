@@ -55,3 +55,8 @@
 - 사용자 생성, 조회, 삭제
 - 계좌 생성, 조회, 삭제
 - 은행 생성, 조회, 삭제
+
+### UI
+- 유니코드 사용
+<img width="202" alt="image" src="https://github.com/Jyebin/shinhan-academy/assets/108725996/38f02d85-8ff5-4a0e-b58e-5ea502d3abdf">
+<img width="198" alt="image" src="https://github.com/Jyebin/shinhan-academy/assets/108725996/99698ab8-8bbb-4607-bc10-98d5a07d2241">
