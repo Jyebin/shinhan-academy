@@ -58,5 +58,5 @@
 
 ### UI
 - 유니코드 사용
-<img width="202" alt="image" src="https://github.com/Jyebin/shinhan-academy/assets/108725996/38f02d85-8ff5-4a0e-b58e-5ea502d3abdf">
-<img width="198" alt="image" src="https://github.com/Jyebin/shinhan-academy/assets/108725996/99698ab8-8bbb-4607-bc10-98d5a07d2241">
+<img src="https://github.com/Jyebin/shinhan-academy/assets/108725996/38f02d85-8ff5-4a0e-b58e-5ea502d3abdf" alt="이미지1" width="220" height="70">
+<img src="https://github.com/Jyebin/shinhan-academy/assets/108725996/dbd2d7f3-c473-4816-8123-f9bbd618b286" alt="이미지2" width="220" height="70">
