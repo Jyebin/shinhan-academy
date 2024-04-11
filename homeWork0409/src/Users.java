@@ -1,5 +1,4 @@
 import lombok.Data;
-
 @Data
 public class Users {
     private int userId;
