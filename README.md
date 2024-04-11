@@ -42,3 +42,16 @@
 |        | BANK_TEL  | VARCHAR2(20) |
 |        | BANK_LOCATION | VARCHAR2(20) |
 |        | ACCOUNT_ID| NUMBER(10) |
+
+### Coding Conventions
+- Class, Method : PascalCase
+- Function, Variable : camelCase
+- SQL : snake_case, UPPER_CASE
+
+### Design Pattern
+- DAO Pattern 사용
+
+### 기능
+- 사용자 생성, 조회, 삭제
+- 계좌 생성, 조회, 삭제
+- 은행 생성, 조회, 삭제
