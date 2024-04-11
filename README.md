@@ -11,7 +11,7 @@
 ### ERD
 <img width="622" alt="image" src="https://github.com/Jyebin/shinhan-academy/assets/108725996/aac658a2-f6b7-4f99-919e-66f0f680218d">
 
-### Table 생성 SQL문
+### Table
 | 테이블 이름 | 설명 | 컬럼 이름 | 데이터 타입 | 제약 조건 |
 |------------|------|-----------|------------|-----------|
 | USERS      | 회원 정보를 저장하는 테이블 | USER_ID    | NUMBER(10) | PRIMARY KEY |
