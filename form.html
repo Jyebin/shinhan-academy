@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="regist.jsp" method="get" enctype="multipart/form-data">
+        아이디 :
+        <input type="text" name="id" value="test" size="5" maxlength="5" readonly><br>
+        <!--name값은 반드시 써야 함. readonly는 읽기전용이므로 수정이 안되고 전송은 됨-->
+        아이디 :
+        <input type="text" name="id2" value="test" size="5" maxlength="5" disabled><br>
+        <!--disabled는 전송이 안됨. 아예 비활성화 시키는 것-->
+        이름 :
+        <input type="text" name="name" required placeholder="이름" autofocus><br>
+        <!--palceholder : 사용자에게 뭘 할건지 알려주는 것. autofocus : 테두리 생김-->
+        비밀번호 :
+        <input type="password" name="pwd"><br>
+        성별 :
+        <input type="radio" name="gender" value="1" id="gender1"> <label for="gender1"> 남자 </label>
+        <input type="radio" name="gender" value="2" id="gender2" checked="checked"> <label for="gender2"> 여자
+        </label><br>
+        취미:
+        <input type="checkbox" name="hobby" value="1"> 독서
+        <input type="checkbox" name="hobby" value="2" checked> 영화
+        <input type="checkbox" name="hobby" value="3"> 게임 <br>
+        거주지:
+        <select name="city" multiple> <!--데이터 관점에서 보면 한개임(이름도 하나, 값도 하나). 선택된 것이 없으면 요청받은 값이 없기 때문에 데베에 null값으로 저장-->
+            <option value="1">서울시</option>
+            <option value="2">경기도</option>
+            <option value="3">제주도</option>
+        </select><br>
+        <!-- 첨부파일:
+        <input type="file" name="filename"> <br> -->
+        자기소개 :
+        <textarea name="introduce" rows="10" cols="20">안냐세요</textarea><br>
+        <input type="hidden" name="no" value="15">
+        <!--사용자에게 보여지지 않지만 값이 전송되어야 하는 경우 hidden을 사용
+            ex)수정된 것
+            파라미터에 url을 입력하면 그 파라미터 값으로 리다이렉트됨-->
+        <input type="submit" value="전송"><br>
+        <input type="image" src="/통장 사본.PNG" width="20%"><br> <!--image를 submit파트처럼 쓰고싶을 때 사용-->
+        <input type="reset" value="초기화"><br> <!--reset : 값이 달라지는 것이 아니라 처음 값으로 돌아가는 것-->
+        <input type="button" value="버튼"><br>
+        <button>버튼</button> <!--전송되는 버튼. type 생략하면 submit-->
+
+        <!--캘린더는 플러그인 많이 사용(ex)Datepicker-->
+
+    </form>
+</body>
+
+</html>
