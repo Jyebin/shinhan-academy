@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border:1px solid #000;
+            padding:0;
+        }
+        .box1{
+            width:400px;
+            height:100px;
+        }
+        .box2{
+            width: 50%;
+            height: 100px;
+        }
+        .box3{
+            width: 100px;
+            height: 100px;
+            box-sizing: content-box; /*기본값 : 컨텐츠 내용만*/
+        }
+        .box4{
+            width: 100px;
+            height: 100px;
+            box-sizing: border-box; /*width=컨텐츠내용+border+padding*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+</body>
+</html>

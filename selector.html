@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contents {
+            color: blue;
+        }
+
+        h1 {
+            color: deeppink;
+        }
+        .contents > div{
+            color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title">제목</h1>
+    <p>본문</p>
+    <div class="contents">본문
+        <div>
+            본문자식1
+        </div>
+        <span>
+            <div>
+                본문자식2
+            </div>
+        </span>
+    </div> <!--id는 문서에서 한개만 있어야 함-->
+    <p>본문</p>
+    <h1>제목2</h1>
+    <p>본문</p>
+</body>
+
+</html>

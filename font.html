@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        h3 {}
+
+        #p1 {
+            text-align: left;
+        }
+
+        #p2 {
+            text-align: right;
+            /*박스(블럭)기준 오른쪽 끝*/
+        }
+
+        #p3 {
+            width: 500px;
+            text-align: center;
+
+        }
+
+        #p4 {
+            width: 200px;
+            text-align: justify;
+            /*텍스트 양쪽 맞춤 정렬*/
+        }
+
+        #lh {
+            background-color: #000000;
+            color: #fff;
+            text-align: center;
+            height: 200px;
+            line-height: 200px;
+            /*높이의 가운데 정렬 한 것처럼 보이기 위해 자주 사용*/
+        }
+
+        #naver {
+            text-decoration: none;
+            text-shadow: 5px 5px 3px orange;
+            /*가로 세로 번짐정도*/
+        }
+
+        #title {
+            width: 300px;
+            /*게시판 제목 같은 거에는 글자수가 정해져 있으므로 그 때 사용*/
+            overflow: hidden;
+            /*내용이 길어지면 숨김*/
+            white-space: nowrap;
+            /*내용이 길어져도 줄바꿈을 안함. overflow와 같이 사용해야 함*/
+            text-overflow: ellipsis;
+            /*실제 개발 시에는 이걸 지정해 주어야 함*/
+        }
+
+        ul {
+            list-style-type: none;
+            /*앞의 문자표 없애기*/
+
+        }
+
+        li {
+            border: 1px solid #222;
+            padding: 20px 40px;
+            margin: 5px;
+        }
+
+        #tb {
+            width: 200px;
+            table-layout: fixed;
+            /*셀 넓이 고정*/
+            word-break: break-all;
+            border-collapse: collapse;
+            /*이중으로 안나옴. 테두리가 한줄로나옴*/
+            border-spacing: 5px; /*사이사이 공간이 벌어짐*/
+            empty-cells: hide; /*비어있는셀. show가 default*/
+        }
+    </style>
+</head>
+
+<body>
+    <h1>안녕하세요. this is computer</h1>
+    <h2>안녕하세요. this is computer</h2>
+    <h3>안녕하세요</h3>
+    <p id="p1">텍스트 정렬 방식</p>
+    <p id="p2">텍스트 정렬 방식</p>
+    <p id="p3">텍스트 정렬 방식</p>
+    <p id="p4">텍스트 정렬 방식</p>
+    <h1 id="lh">HTML</h1>
+    <p>
+        <a href="http://naver.com" id="naver">네이버</a> <!--a태그 : 자동 이동 되게 하는 속성-->
+    </p>
+    <p id="title">
+        안녕하슈 나는 홍길동이유 반가워! 그리고 뭐가 어찌구 저찌구혀
+    </p>
+    <ul>
+        <li>한국</li>
+        <li>중국</li>
+        <li>일본</li>
+    </ul>
+    <table border="1" id="tb">
+        <tr>
+            <td></td>
+            <td>hello_i_am_hong</td>
+        </tr>
+    </table>
+</body>
+
+</html>
