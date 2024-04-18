@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        transition-duration: 5s;
+        /*5초동안 변화가 일어남*/
+        transition-timing-function: ease;
+        /*변화 속도. linear:일정, ease:천천히->빠름->천천히*/
+        transition-property: background-color 10s easy;
+        transition: background-color 5s ease, width 5s linear;
+    }
+
+    .box:hover {
+        /*마우스를 올리면 크기가 변함. 마우스를 내리면 다시 원래대로 돌아감*/
+        width: 200px;
+        height: 200px;
+    }
+
+    .box:active {
+        /*마우스를 클릭하면 배경 색이 변함*/
+        background-color: red;
+    }
+</style>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>
