@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: rgba(255, 192, 203, 0.506);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">안녕하세요</div>
+    <script>
+
+        //출력방법 1. console.log
+        console.log(typeof document.querySelector('.box')); //질의 선택자. 선택자를 요청. class가 box인 객체 return. console.log는 출력. typeof를 붙이면 타입을 출력해줌
+        //2. alert
+        //alert(document.querySelector('.box')); //user에게 보임
+        //3. write
+        document.write(document.querySelector('.box')); //user에게 보임. 값을 확인해 볼 때 쓰는거로는 적합하지 않음
+        document.write("<div class=\"box\">안녕하세요</div>"); //document.write는 단순히 문자열만 출력하는 것이 아님. html의 코드 실행 결과를 그대로 출력함. 문자열이지만 요소를 출력
+        if (confirm('삭제하시겠습니까?')) {
+            console.log('삭제로직 실행');
+        }
+        //console.log(reply); //yes는 true, no는 false가 반환됨. 응답 결과를 출력
+    </script>
+</body>
+
+</html>

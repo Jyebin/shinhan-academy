@@ -1,0 +1,35 @@
+<script>
+    /*
+    함수 정의
+    function 함수명 (매개변수...){
+        실행문 ...
+        return 값;
+    }
+    */
+
+    // 함수선언 -> 실행문(statement)가 아니라 세미콜론 X
+    function aaa(){
+        console.log('aaa');
+    }
+    // 함수 실행 , 호출
+    aaa();
+
+    // 익명함수 -> 세미콜론 O
+    var bbb = function(){
+        console.log('bbb');
+    };
+    bbb();
+
+    var arr = [1, '홍길동', function(){
+        console.log('ccc');
+    }];
+    
+    //즉시실행함수
+    (function ccc(){
+        console.log('ccc')
+    })(); //함수를 선언하자마자 실행
+</script>
+
+<script>
+    
+</script>
