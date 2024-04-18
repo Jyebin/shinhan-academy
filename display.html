@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+            /*그냥 inline으로만 하면 margin이 안먹음*/
+            padding: 20px;
+            margin: 0 20px;
+            border: 1px solid #222;
+            width: 200px;
+            height: 200px;
+        }
+
+        #name{
+            background-color: yellow;
+            width: 200px;
+            height: 100px;
+            display: inline-block; /*이걸 하지 않으면 적용이 안됨. 그냥 block을 적용하면 한 행 전체를 차지해서 글씨가 한줄로 나오지 않음*/
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </nav>
+    <span>안녕하세요 저는</span>
+    <span id="name">홍길동</span>
+    <span>입니다</span>
+
+
+    </span>
+</body>
+
+</html>

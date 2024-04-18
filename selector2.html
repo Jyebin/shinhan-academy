@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1+p {
+            /*h1에 인접한, 바로 뒤에 있는 p 하나*/
+            color: red;
+        }
+
+        h1~p {
+            /*h1뒤에 있는 모든 p*/
+            background-color: yellow;
+        }
+
+        /*!!!!!!! 속성 선택자. 매우 중요 !!!!!!!*/
+        input[type='text'] {
+            background-color: blue;
+        }
+
+        .target:link,
+        .target:visited {
+            /*방문하지 않아도 검은색으로 나오고, 방문 한 것도 검은색으로 나옴*/
+            color: black;
+            text-decoration: none;
+        }
+
+        .target:hover {
+            /*호버. 마우스를 위로 올렸을 때의 작업*/
+            color: red;
+        }
+
+        .target:active {
+            /*마우스를 클릭한 상태의 순간*/
+            color: aqua;
+        }
+
+        .target:focus {
+            /*tab을 눌렀을 때*/
+            color: violet;
+        }
+
+        .list>li {
+            /*list 바로 아래에 있는 li*/
+            list-style: none;
+        }
+
+        .list>li:first-child {
+            /*list 아래의 li의 첫번째 child*/
+            color: yellow;
+        }
+
+        .list>li:last-child {
+            /*list 아래의 li의 마지막 child. id값을 사용할 수 없을 때(개수를 모를 때) 사용*/
+            color: blue;
+        }
+
+        .list>li:nth-child(2n) {
+            /*짝수번째*/
+            background-color: white;
+        }
+
+        .list>li:nth-child(2n+1) {
+            /*홀수번째*/
+            background-color: #e3e3e3;
+        }
+
+        #container>div:nth-child(3) { /*순서에 따른 자식*/
+            color: red;
+        }
+        #container>div:nth-of-type(2) { /*타입이 일치해야 함*/
+            color: red;
+        }
+    </style>
+</head>
+
+<body>http://www.naver.com/
+    <h1>예약 방법</h1>
+    <p>온라인 예약</p>
+    <p>가족실</p>
+    <p>도미토리</p>
+    <input type="text" name="id">
+    <input type="password" name="pwd">
+    <hr>
+    <!--이동할 필요가 없을 때 #을 사용. 나중에는 쓰면 안됨. #;으로 써야 함-->
+    <a href="#;" class="target">링크</a>
+    <a href="http://www.naver.com" class="target">링크</a>
+    <hr>
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <div id="container">
+        <p>첫째 아들</p>
+        <p>둘째 아들</p>
+        <div>셋째 딸</div>
+        <p>넷째 아들</p>
+        <div>다섯째 딸</div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

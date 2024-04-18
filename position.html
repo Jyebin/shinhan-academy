@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        .box1 {
+            position: fixed; /*고정시키면 스크롤 내릴 때마다 따라옴*/
+            background-color: red;
+            top:0;
+            left:0;
+        }
+
+        .box2 {
+            position: relative;
+            background-color: green;
+            left: 10px;
+            top: -10px;
+            z-index: 99999;
+            /*위로 올라감*/
+        }
+
+        .box3 {
+            position: absolute;
+            background-color: blue;
+            left:20px;
+            top:-20px;
+        }
+        .con{
+            width:100px;
+            height: 100px;
+            position: relative;
+            overflow: hidden;
+            border:1px solid #000
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+
+</body>
+
+</html>

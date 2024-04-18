@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            float: left;
+            margin-right: 40px;
+        }
+
+        .box1 {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            float: left
+                /*왼쪽에 붙음*/
+        }
+
+        .box2 {
+            background-color: green;
+            width: 100px;
+            height: 100px;
+            float: left
+        }
+
+        .box3 {
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+            clear: both;
+            /*이 속성을 주지 않으면 사진 뒤로 넘어가서 사라져버림*/
+        }
+    </style>
+</head>
+
+<body>
+    <img src="/통장 사본.PNG" width="300">
+    <p></p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi praesentium delectus maxime laudantium
+    assumenda
+    nihil, neque numquam eum illo libero sunt. Nemo voluptatibus libero suscipit debitis eveniet praesentium maiores
+    aperiam.</p>
+    <!--p태그가 없으면 화면을 줄였을 때 이미지 바로 옆부터 글자가 출력됨. p태그가 있으면 이미지 아래부터 글자가 출력됨-->
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+
+</html>
