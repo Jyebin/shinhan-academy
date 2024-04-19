@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>창제목</title>
     <script>
         window.onload = function () { //위에다 실행하려면 나중에 로드되어야 함
             document.querySelectorAll("input[type='button']").forEach(element => {
@@ -27,6 +27,7 @@
     <input type="button" value="증가"> <!--증가 버튼을 클릭하는 순간 h1값을 가지고 와서 1을 더한 다음 다시 넣어주기-->
     <input type="button" value="감소">
     <h1 id="num">0</h1>
+    <a href="javascript:window.close();">닫기</a> <!--javascript:을 빼면 안됨. 경로이기 때문에 꼭 써주어야 함-->
 </body>
 
 </html>

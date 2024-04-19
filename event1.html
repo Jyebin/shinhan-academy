@@ -16,7 +16,7 @@
         function change(color) {
             document.querySelector("#result").style.backgroundColor = color;
         }
-        function toggle(value) { 
+        function toggle(value) {
             document.querySelector("#result").style.dispaly = value;
         }
         window.onload = function () { //onload에 이벤트를 연결시켜주는 함수를 넣어줌. 브라우저에서 페이지 전체가 load 되면 함수를 실행해줌
@@ -29,26 +29,30 @@
                 console.log(this);
                 alert('클릭1');
             };
-            btn1.onclick = function(){
+            btn1.onclick = function () {
                 console.log(this);
                 alert('클릭11');
             };
             var btns = document.querySelectorAll(".btn");
             console.log(btns);
-            for(let i=0;i<btns.length;i++){ //for문을 돌면서 이벤트를 봄
-                btns[i].onclick=function(){ 
+            for (let i = 0; i < btns.length; i++) { //for문을 돌면서 이벤트를 봄
+                btns[i].onclick = function () {
                     alert('click');
                     console.log(this);
                 };
             }
             var btn6 = document.querySelector('#btn6');
-            btn6.addEventListener('click', function(){
+            btn6.addEventListener('click', function () {
                 alert('click6');
             });
-            btn6.addEventListener('click', function(){
+            btn6.addEventListener('click', function () {
                 alert('click66');
                 console.log(this.value);
             });
+            document.querySelector("#popup").onclick = function () {
+                window.open('event_ex.html', 'event', 'width=500, height=400') //팝업으로 새 창이 열릴때, 이름이 똑같은 창이 있으면 그 창에 다시 뜸. 새 화면에 같은 이름으로 뜨는 것이 아님(여기서의 event는 팝업으로 뜬 새 창의 이름)
+                //현재는 브라우저에서 팝업을 막아두는 경우가 많아서, 실제로 팝업처럼 보이는 것이 div임
+            }
         };
     </script>
 </head>
@@ -67,7 +71,8 @@
     <input type="button" value="버튼3" class="btn">
     <input type="button" value="버튼4" class="btn">
     <input type="button" value="버튼5" class="btn">
-    <input type="button" value="버튼6" id="btn">
+    <input type="button" value="버튼6" id="btn6">
+    <input type="button" value="팝업" id="popup">
 </body>
 
 </html>
