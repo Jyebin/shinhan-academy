@@ -20,6 +20,11 @@
     };
     bbb();
 
+    var bbb2 = () => {
+        console.log('bbb2');
+    }
+    bbb2();
+
     var arr = [1, '홍길동', function(){
         console.log('ccc');
     }];
@@ -27,7 +32,7 @@
     //즉시실행함수
     (function ccc(){
         console.log('ccc')
-    })(); //함수를 선언하자마자 실행
+    })(); //함수를 선언함과 동시에 실행
 </script>
 
 <script>

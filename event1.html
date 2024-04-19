@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+    <script>
+        function change(color) {
+            document.querySelector("#result").style.backgroundColor = color;
+        }
+        function toggle(value) { 
+            document.querySelector("#result").style.dispaly = value;
+        }
+        window.onload = function () { //onload에 이벤트를 연결시켜주는 함수를 넣어줌. 브라우저에서 페이지 전체가 load 되면 함수를 실행해줌
+            //이벤트 연결
+            var btn1 = document.getElementById("btn");
+            // btn1.onclick = function () {
+            //     alert('클릭1'); //클릭이 되는 시점에(나중에) 실행
+            // }
+            btn1.onclick = function () {
+                console.log(this);
+                alert('클릭1');
+            };
+            btn1.onclick = function(){
+                console.log(this);
+                alert('클릭11');
+            };
+            var btns = document.querySelectorAll(".btn");
+            console.log(btns);
+            for(let i=0;i<btns.length;i++){ //for문을 돌면서 이벤트를 봄
+                btns[i].onclick=function(){ 
+                    alert('click');
+                    console.log(this);
+                };
+            }
+            var btn6 = document.querySelector('#btn6');
+            btn6.addEventListener('click', function(){
+                alert('click6');
+            });
+            btn6.addEventListener('click', function(){
+                alert('click66');
+                console.log(this.value);
+            });
+        };
+    </script>
+</head>
+
+<body>
+    <!--onclick이 이벤트 핸들러임. 이 이벤트 핸들러 안에 코드를 넣어줌*-->
+    <input type="button" value="red" onclick='change("red");'>
+    <input type="button" value="green" onclick='change("green");'>
+    <input type="button" value="blue" onclick='change("blue");'>
+    <input type="button" value="보이기" onclick="toggle('block')">
+    <input type="button" id="btn" value="버튼1">
+    <div id="result">
+        <input type="button" value="숨기기" onclick="toggle('none')">
+    </div>
+    <input type="button" value="버튼2" class="btn">
+    <input type="button" value="버튼3" class="btn">
+    <input type="button" value="버튼4" class="btn">
+    <input type="button" value="버튼5" class="btn">
+    <input type="button" value="버튼6" id="btn">
+</body>
+
+</html>

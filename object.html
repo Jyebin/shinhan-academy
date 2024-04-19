@@ -1,0 +1,26 @@
+<script>
+    var numbers = ['one', 'two', 'three', 'four'];
+    console.log(typeof numbers);
+    console.log(numbers);
+
+    numbers.forEach(function (value, index) {
+        console.log(value, index);
+    });
+
+
+    var arr = new Array();
+    arr.push('one');
+    arr.push('two');
+    arr.pop();
+    console.log(arr);
+
+
+    console.log(new Date());
+
+    var now = new Date();
+    var firstDay = new Date("2024-03-12");
+
+    var passedTime = now.getTime() - firstDay.getTime(); //경과 ms
+    passedTime = Math.trunc(passedTime / (1000 * 60 * 60 * 24)); //경과 일자
+    console.log(passedTime);
+</script>

@@ -1,0 +1,56 @@
+<script>
+    function sum(a, b, c) {
+        return a + b + c;
+    }
+    console.log(sum('1', '2', '3'));
+
+    //가변인자
+    function sum() {
+        console.log(arguments);
+    }
+    sum(2, 3, 4, 5, 6);
+
+    //함수를 매개변수로 전달(callback)
+    function calculator(func) { //func에서 실행됨 -> 뒤에서 실행된다 해서 callback
+        func(2, 3, 4, 5, 6);
+    }
+    calculator(sum);
+
+    calculator(function () {//익명함수
+        total = 0;
+        for (let i = 0; i < arguments.length; i++) {
+            total += arguments[i];
+        }
+        console.log(total);
+    });
+    calculator(arr => { //화살표함수
+        total = 0;
+        for (let i = 0; i < arr.length; i++) {
+            total += arr[i];
+            if(i==2){
+                return; //함수를 중지
+            }
+        }
+        console.log(total);
+    });
+
+    function run(){
+        console.log('뛰다');
+    }
+    function run(){
+        console.log('빨리 뛰다'); //에러가 안남. 결과만 달라짐(기존의 뛰다에서 빨리뛰다로 변경)
+    }
+    run();
+    function health(){
+        function run(){ //내부함수
+            console.log('뛰다');
+        }
+        run(); //가까이 있는 함수를 실행. health안에서 실행하는 함수
+    }
+
+    //인코딩함수(escape(), encodeURI(), encodeURIComponent()
+    //디코딩함수(unescape(), decodeURI(), decodeURIComponent())
+    console.log(encodeURIComponent('안냐세요'));
+    
+
+</script>

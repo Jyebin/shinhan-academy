@@ -1,0 +1,32 @@
+<!--버튼을 클릭하면 증가시키거나 감소시키는 코드-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () { //위에다 실행하려면 나중에 로드되어야 함
+            document.querySelectorAll("input[type='button']").forEach(element => {
+                //console.log(document.querySelectorAll("input[type='button']"));
+                element.addEventListener('click', function () { //요소가 클릭되면
+                    //console.log(element.value);
+                    if (element.value == '증가') {
+                        document.querySelector("h1").innerHTML = Number(document.querySelector("h1").innerHTML) + 1;
+                    } else {
+                        document.querySelector("h1").innerHTML = Number(document.querySelector("h1").innerHTML) - 1;
+                    }
+                });
+            }); //인풋이면서 타입 속성이 버튼인 것
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="증가"> <!--증가 버튼을 클릭하는 순간 h1값을 가지고 와서 1을 더한 다음 다시 넣어주기-->
+    <input type="button" value="감소">
+    <h1 id="num">0</h1>
+</body>
+
+</html>
