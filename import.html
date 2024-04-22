@@ -1,0 +1,9 @@
+<!--<script src="test1.js"></script> 전체를 다 불러옴-->
+<!-- <script src="test2.js"></script> 실행 순서 -->
+<script type="module">
+    import { func3, func1 } from './test1.js';
+    import xxx from './test2.js';
+    func3();
+    xxx();
+    func2();
+</script>

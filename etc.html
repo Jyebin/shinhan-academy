@@ -1,0 +1,63 @@
+<script>
+    //템플릿 문자열
+    var name = "홍길동";
+    var msg = "안녕하세요";
+    var text = name + '님 ' + msg;
+    console.log(text);
+
+    var text2 = `${name}님 ${msg}`; //벡틱을 사용해야 함. 키보드에서 숫자 1 옆에 있는 것.
+    console.log(text2);
+
+    //전개연산
+    var arr = [1, 2];
+    var arr2 = arr; //arr와 arr2가 같은 배열을 참조하게 됨을 의미
+    console.log(arr == arr2); //같은 배열을 참조하므로 true
+    var arr3 = [...arr]; //전개구문(...)을 사용하여 arr의 요소를 복사하여 arr3 배열 생성
+    console.log(arr == arr3); //다른 주소값을 갖고 있으므로(다른 배열을 참조하므로) false
+
+    //배열이 합쳐지는 효과
+    var arr4 = [...arr, ...arr2, ...arr3];
+    console.log(arr4);
+
+    //객체
+    var obj1 = { a: 1, b: 2 };
+    var obj2 = { c: 3, d: 4 }; //같은 속성명이 있으면 덮어씌워짐(d가 아니라 b라면 obj2의 b로 덮어씌워짐)
+    var obj3 = { ...obj1, ...obj2 }; //전개된 것들이 합쳐져 하나의 객체로 들어감
+    console.log(obj3);
+
+    //obj3.c = 5;라고 하면 안됨
+    var obj4 = { ...obj3, c: 5 }; //기존의 객체에 c라는 속성을 추가(여기서는 수정)하는 것이 아니라 새로운 객체를 만드는 것임.
+    console.log(obj4);
+
+    var student = {
+        studno: 1,
+        propName: '김길동' //변수가 아니라 속성명 자체
+    };
+    console.log(student);
+
+    // var student2 = {
+    //     studno : 1,
+    //     [propName] : '김길동' //속성명을 변수의 값으로 저장
+    // };
+    // console.log(student2);
+
+    var studno = 1;
+    var name = '최길동';
+    var age = 10;
+    var func = () => {
+        console.log('함수');
+    }
+    var student3 = { studno, name, age, func };
+    console.log(student3);
+
+    //구조분해할당(배열의 구조를 분해해 할당해주는 것)
+    var arr = [1, 2];
+    var a = arr[0];
+    var b = arr[1];
+    var [b, a] = arr; //배열은 순서대로 할당
+
+    var obj = {a:1, b:2}; //중괄호는 객체임
+    var {a,b} = obj;
+    console.log(a,b); //차례대로 출력됨. 순서가 아니라 이름(속성명, 변수명)을 알아서 비교해서 대입
+
+</script>

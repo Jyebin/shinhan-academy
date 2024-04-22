@@ -27,22 +27,22 @@
         total = 0;
         for (let i = 0; i < arr.length; i++) {
             total += arr[i];
-            if(i==2){
+            if (i == 2) {
                 return; //함수를 중지
             }
         }
         console.log(total);
     });
 
-    function run(){
+    function run() {
         console.log('뛰다');
     }
-    function run(){
+    function run() {
         console.log('빨리 뛰다'); //에러가 안남. 결과만 달라짐(기존의 뛰다에서 빨리뛰다로 변경)
     }
     run();
-    function health(){
-        function run(){ //내부함수
+    function health() {
+        function run() { //내부함수
             console.log('뛰다');
         }
         run(); //가까이 있는 함수를 실행. health안에서 실행하는 함수
@@ -51,6 +51,27 @@
     //인코딩함수(escape(), encodeURI(), encodeURIComponent()
     //디코딩함수(unescape(), decodeURI(), decodeURIComponent())
     console.log(encodeURIComponent('안냐세요'));
-    
+
+    //클로저
+    function test() {
+        var str = '하이룽'; //지역변수. 함수가 사라지면(실행이 끝나면) 사라짐
+        return function () {
+            return str;
+        };
+    }
+    var str2 = test(); //함수가 담긴 변수
+    console.log(str2()); //함수를 실행해서 출력
+
+    function test2(name){
+        var str = name + '님 안냐세요';
+        return function(){
+            return str;
+        }
+    }
+    var f1 = test2('홍길동'); //함수에서 같은 변수를 참조하고 있지만 서로 다른 값을 가지고 있음
+    var f2 = test2('김길동');
+
+    console.log(f1());
+    console.log(f2());
 
 </script>

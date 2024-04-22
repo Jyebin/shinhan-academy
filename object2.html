@@ -1,0 +1,69 @@
+<script>
+    console.log(navigator.userAgent);
+
+    //객체 선언 방법
+    var car = {
+        model: '아반떼',
+        company: '현대',
+        color: '흰색',
+        run: function () { //기능(메소드)이기 때문에 익명 함수 사용
+            console.log('자동차가 달린다');
+        }
+    };
+    console.log(typeof car);
+    console.log(car);
+
+    //함수 실행
+    car.run(); //겉으로 보기에는 함수인지 메소드인지 모름
+
+    //속성
+    console.log(car.model); //문자열이나 변수를 처리할 수 없음
+    console.log(car['company']); //문자열이나 변수 처리 가능
+    console.log(car); //있으면 덮어쓰고, 없으면 추가
+
+    function Student() {
+
+    }
+    var s = new Student(); //클래스가 아님. 객체를 생성한 것
+    s.name = "홍길동";
+    s.grade = 1;
+    s.run = function () {
+        console.log('등교');
+    };
+
+    console.log(s);
+    console.log(typeof s);
+
+    //생성자
+    function Square(w, h) {
+        var width = w;
+        var height = h;
+
+        var result = 0;
+        var cal = function () {
+            this.result = w * h;
+        }
+    }
+    // var square = new Square(5, 10);
+    // console.log(square);
+    // //console.log(square.cal);
+
+    // var square2 = new Square(5, 10);
+    // console.log(square2); //에러 발생
+    // console.log(square2.cal);
+    // console.log(square2.result);
+
+    //클래스(ES6 이후)
+    class Square2{ //다중상속, 인터페이스 불가
+        constructor(w,h){
+            this.width = w;
+            this.height = h;
+        }
+        cal(){
+            this.result = this.width * this.height;
+            return this.result;
+        }
+    }
+    var square2 = new Square(5,10);
+    console.log(square2)
+</script>

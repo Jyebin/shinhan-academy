@@ -19,17 +19,19 @@
         function toggle(value) {
             document.querySelector("#result").style.dispaly = value;
         }
+        //문서 로드 후 실행. 이 코드는 필수적으로 넣어 주어야 함.
         window.onload = function () { //onload에 이벤트를 연결시켜주는 함수를 넣어줌. 브라우저에서 페이지 전체가 load 되면 함수를 실행해줌
             //이벤트 연결
-            var btn1 = document.getElementById("btn");
+            var btn1 = document.getElementById("btn"); //올바른 선택자를 넣는 것이 중요함
             // btn1.onclick = function () {
             //     alert('클릭1'); //클릭이 되는 시점에(나중에) 실행
             // }
-            btn1.onclick = function () {
+
+            btn1.onclick = function () { //아래 코드가 있기 때문에 이 코드는 사라진것처럼 보임
                 console.log(this);
                 alert('클릭1');
             };
-            btn1.onclick = function () {
+            btn1.onclick = function () { //속성은 덮어씌워짐
                 console.log(this);
                 alert('클릭11');
             };
@@ -42,14 +44,14 @@
                 };
             }
             var btn6 = document.querySelector('#btn6');
-            btn6.addEventListener('click', function () {
+            btn6.addEventListener('click', function () { //메소드 실행. 어떤 이벤트가 발생하면 어떤 이벤트를 실행할지를 지정. 메소드는 덮어씌워지지 않고 추가(add)됨
                 alert('click6');
             });
             btn6.addEventListener('click', function () {
                 alert('click66');
                 console.log(this.value);
             });
-            document.querySelector("#popup").onclick = function () {
+            document.querySelector("#popup").onclick = function () { //id가 popup인 것
                 window.open('event_ex.html', 'event', 'width=500, height=400') //팝업으로 새 창이 열릴때, 이름이 똑같은 창이 있으면 그 창에 다시 뜸. 새 화면에 같은 이름으로 뜨는 것이 아님(여기서의 event는 팝업으로 뜬 새 창의 이름)
                 //현재는 브라우저에서 팝업을 막아두는 경우가 많아서, 실제로 팝업처럼 보이는 것이 div임
             }
@@ -59,11 +61,15 @@
 
 <body>
     <!--onclick이 이벤트 핸들러임. 이 이벤트 핸들러 안에 코드를 넣어줌*-->
+
+    <!--html이 주체가 됨. html 안에 js를 사용하여 코딩-->
     <input type="button" value="red" onclick='change("red");'>
     <input type="button" value="green" onclick='change("green");'>
     <input type="button" value="blue" onclick='change("blue");'>
     <input type="button" value="보이기" onclick="toggle('block')">
     <input type="button" id="btn" value="버튼1">
+
+    <!--js가 주체가 됨. js 안에 코딩-->
     <div id="result">
         <input type="button" value="숨기기" onclick="toggle('none')">
     </div>
