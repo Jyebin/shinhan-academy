@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="/google.PNG" id="google">
+    <script>
+        var obj = document.querySelector("#google");
+        console.log(obj);
+        obj.onclick = abc;
+        function abc(e) {
+            console.log(e);
+            console.log(this);
+            //alert('이미지를 클릭했습니다.');
+            //obj.src = "intellij.png";
+            obj.setAttribute("src", "intellij.png");
+            obj.setAttribute("width","200");
+        };
+        obj.addEventListener('mouseover',function(){
+            obj.setAttribute("src","google.png");
+            obj.setAttribute("width","200");
+        });
+        obj.addEventListener('mouseover',function(){
+            obj.setAttribute("src","intellij.png");
+            obj.removeAttribute("width","200");
+        });s
+    </script>
+</body>
+
+</html>

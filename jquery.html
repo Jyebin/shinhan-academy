@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="js/jquery-3.7.1.min.js"></script> client에서 동작. 같은 서버에서 동작한다고 생각할 수 있지만, 사용자의 브라우저로 다운되어서 와야 하기 때문에 더 느림-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> <!--인터넷 연결이 안되면 사용 불가-->
+    <style>
+        .redColor {
+            color: red;
+        }
+    </style>
+    </script>
+</head>
+
+<body>
+    <h1 class="hi">하이룽1</h1>
+    <h1>하이룽2</h1>
+    <h1>하이룽3</h1>
+    <h1>하이룽4</h1>
+    <h1 class="hi hello redColor">하이룽5</h1>
+    <input type="button" id="btn" value="토글">
+    <!-- <script>
+        console.log($("h1")); //jquery객체 return. h1을 가지고 옴
+    </script> -->
+    <!--jquery로 addclass를 해서 추가. 기존은 <h1 class="redColor">로 해야 함-->
+    <script>
+        //$("h1").addClass("redColor");
+        $("h1").removeClass("redColor"); //class가 redColor인 것만 빼고 적용
+        $("h1").eq(0).addClass("redColor"); //h1 배열의 0번 인덱스에 redColor 클래스를 추가. 하이룽1만 빨간색으로 적용됨
+        console.log($("h1").length);
+
+        // $.each($("h1"), function (i, e){ //index, element. each:정적 메소드
+        //     console.log(i,e);
+        // }); 
+
+        // $("h1").each((i,e)=>{
+        //     //console.log(i,e.innerHTML);
+        //     console.log($("h1").eq(i).html);
+        // });
+
+        // $.each([1,2,3],(i,e)=>{
+        //     console.log(i,e);
+        // })
+
+        // $("h1").toggleClass("redColor");
+
+        $("#btn").click(function () {
+            $("h1").each(i => {
+                if ($("h1").eq(i).hsClass('redColor')) {
+                    $("h1").eq(i).removeClass('redColor');
+                } else {
+                    $("h1").eq(i).addClass('redColor');
+                }
+            })
+            $("btn").attr("value"), "안녕";
+        });
+
+        console.log($("#btn").attr("value"));
+        // $("h1").eq(0).html('얀녕');
+        // console.log($("h1").eq(0).html());
+        // $("body").html("<h1>새로운 태그</h1>");
+        // console.log($("h1").eq(0).css('color','blue'));
+        //$("h1").eq(0).empty();
+        var text = "<h2>추가된 요소</h2>";
+        $(text).appendTo($("h1").eq(4));
+        $("h1").eq(4).append(text); //안에서 맨 끝. after는 끝나고 맨 뒤에 붙이는 것
+        $("h1").eq(0).clone().appendTo
+    </script>
+</body>
+
+</html>

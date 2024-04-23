@@ -1,0 +1,21 @@
+<!DOCTYPE html><!--doc type. 태그는 아님-->
+<html lang="en"><!--자식이 2개 있음. head, body-->
+<head><!--자식이 3개 있음. meta, meta, title-->
+    <meta charset="UTF-8"><!--자식이 1개 있음. charset-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> <!--자식이 없고 부모(html)만 있음-->
+    <div>
+        <span id="abc">안녕<p></p></span>
+    </div>
+
+    <!--차이점-->
+    <script>
+        document.getElementById("abc").innerHTML = "<h1>안녕</h1>"; //진짜 코딩 한 것처럼 들어감
+        document.getElementById("abc").innerText = "<h1>안녕</h1>"; //문자열 자체로 들어감
+        document.getElementById("abc").setAttribute("style", "color:red");
+        console.log(document.getElementById("abc").getAttribute("id"));
+    </script>
+</body>
+</html>

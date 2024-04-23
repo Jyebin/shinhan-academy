@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function add() {
+            var text = document.querySelector("#subject").value;
+            if (text == '') { //아무것도 입력하지 않고 추가 버튼을 누르면 알림창 띄우기
+                alert('주제를 입력하세요');
+                return; //함수 중지
+            }
+            var li = document.createElement("li");
+            var textNode = document.createTextNode(text);
+            li.appendChild(textNode);
+
+            document.querySelector("#itemList").appendChild(li);
+            document.querySelector("#subject").value = "";
+        }
+        li.addEventListener('click',function(){
+            li.parentNode.removeChild(this);
+        });
+
+        window.onload = function (e) {
+            document.querySelector("#subject").addEventListener('keypress', function (e) {  //keypress 이벤트를 걸어 enter를 누르면 저장되도록 함
+            if(e.keycode == 13){ //enter키를 눌렀을 경우
+                add();
+            }
+        });
+    };
+    </script>
+</head>
+
+<body>
+    <h1>Web Programming</h1>
+    <h3>공부할 주제를 기록해 보세요.</h3>
+    <div>
+        <input type="text" id="subject">
+        <input type="button" onclick="add();" value="추가">
+    </div>
+    <ul id="itemList"></ul>
+</body>
+
+</html>
