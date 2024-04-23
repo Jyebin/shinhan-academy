@@ -168,15 +168,16 @@
             //#total : id가 total인 html 요소
             //.total : 클래스가 total인 html 요소
 
-            var originCost = 0; //공급 가격
             var VAT = 0; //세금
             var resultCost = 0; //총 견적 비용
             originCost = result;
             VAT = result * 0.1;
 
-            $('.class').text(result + " 만원");
+            $('#price1').text(result + " 만원");
+
+
             console.log(result);
-            $('.clear ico').text(VAT + " 만원");
+            $('#vat').text(VAT + " 만원");
             console.log(VAT);
 
             resultCost = result + VAT;
