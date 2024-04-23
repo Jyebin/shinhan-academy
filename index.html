@@ -135,13 +135,9 @@
 
             var computerQuantity = ($('input[name="cnt1"]').val()); //컴퓨터 개수. 사용자가 직접 입력했기 때문에 input
             computer = 100 * computerQuantity;
-            // console.log(computerQuantity);
-            // console.log(computer);
 
             var TVQuantity = ($('input[name="cnt2"]').val()); //TV 개수
             TV = 150 * TVQuantity;
-            // console.log(TVQuantity);
-            // console.log(TV);
 
             var refrigeratorQuantity = ($('input[name="cnt3"]').val()); //냉장고 개수
             refrigerator = 200 * refrigeratorQuantity;
@@ -149,8 +145,6 @@
             if ($('select[name="product"]').val() === "홈시어터") {
                 var homeQuantity = ($('input[name="cnt4"]').val()); //홈시어터 개수
                 home = 10 * homeQuantity;
-                // console.log(homeQuantity);
-                // console.log(home);
             } else if ($('select[name="product"]').val() === "전자렌지") {
                 microWaveQuantity = ($('input[name="cnt4"]').val());
                 microWave = 20 * microWaveQuantity;
@@ -158,6 +152,7 @@
                 washingQuantity = ($('input[name="cnt4"]').val());
                 washing = 50 * washingQuantity;
             }
+
             result = computer + TV + refrigerator + home + microWave + washing; //총 금액
             if (result > 200) {
                 result = result * 0.9;
@@ -170,20 +165,24 @@
 
             var VAT = 0; //세금
             var resultCost = 0; //총 견적 비용
-            originCost = result;
-            VAT = result * 0.1;
+            VAT = parseInt(result * 0.1);
 
-            $('#price1').text(result + " 만원");
-
-
-            console.log(result);
-            $('#vat').text(VAT + " 만원");
-            console.log(VAT);
-
+            $('#price1').text(result * 10000);
+            $('#vat').text(VAT * 10000);
             resultCost = result + VAT;
-            //id가 total인 값에 result를 넣음
-            $('.total').text(resultCost + " 만원");
+            $('.total').text(resultCost * 10000 + " 원");
 
+    
+            $('.subject a').on('click', function () {
+                $('input[name="cnt1"]').val('');
+                $('input[name="cnt2"]').val('');
+                $('input[name="cnt3"]').val('');
+                $('input[name="cnt4"]').val('');
+
+                $('#price1').text('0');
+                $('#vat').text('0');
+                $('.total').text('0 원');
+            });
         });
 
 
