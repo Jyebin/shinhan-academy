@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("#btn").click(function() {
+                $.ajax({
+                    url : "board.json",
+                    success:function(data) {
+                        // console.log(data);
+                        $("#tbl").empty();
+                        $.each(data, (i,e) => {
+                            $("#tbl").append("<tr><td>"+e.no+"</td><td>"+e.title+"</td><td>"+e.name+"</td><td>"+e.writedate+"</td></tr>")
+                        })
+                    }
+                });
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="button" id="btn" value="버튼">
+    <table border="1" id="tbl">
+
+    </table>
+</body>
+</html>

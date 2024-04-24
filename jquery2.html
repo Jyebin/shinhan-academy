@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> <!--인터넷 연결이 안되면 사용 불가-->
+    <style>
+        #box {
+            border: 1px solid #000;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+    </style>
+    <script>
+        //jquery애서는 익명함수를 쓰는 것이 좋음
+        $(function () {
+            $("#btn").bind('click', function () {
+                $("#box").show();
+                // $("#box").show(2000, function(){
+                //     alert('이벤트 끝');
+                // }); //2000ms동안 나타나고, 다 나타나면 alert 표시
+                // $("#box").toggle();
+                // $("#box").slideDown();
+                // $("#box").slideUp();
+                // $("#box").slideToggle(); //개발자 도구를 켜고 보면 height 값이 바뀌는 것을 볼 수 있음
+                //     $("#box").animate({
+                //         //left : 300, top:300
+                //         width: 150
+                //     }, 2000).animate({
+                //         height: 150
+                //     }, 2000).animate({
+                //         left: 1500
+                //     }, 500).animate({
+                //         top: 800
+                //     }, 3000); //width가 커지고 height가 커짐
+                $("#box").animate({ //버튼을 누를 때마다 커짐
+                    width: '+=50', height: '+=50'
+                }, 500)
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <input type="button" id="btn" value="버튼">
+    <div id="box" style="display:none;">
+
+    </div>
+</body>
+
+</html>

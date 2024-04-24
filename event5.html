@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function () { //이미지 태그를 클릭하면 함수 실행
+            $(".thumbnail").click(function () {
+                console.log($(".thumbnail").index($(this))); //몇 번째 인덱스인지 반환
+                var idx = $(".thumbnail").index($(this)); //idx를 return해주는 메소드
+                console.log($("input[type='hidden']").eq(idx).val()); //어떤 val을 갖고 있는지 반환
+
+                //사용자 정의 속성. 'data-'로 되어 있으면 무조건 사용자 정의 속성임.
+                console.log($(this).data('name')); //대문자를 사용하면 안됨
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <!--이미지가 로드되는것은 나중이지만 DOM은 먼저 나옴-->
+    <img src="google.png" class="thumbnail" data-name="A"> 
+    <img src="google.png" class="thumbnail" data-name="B"> 
+    <img src="google.png" class="thumbnail" data-name="C"> 
+    <img src="google.png" class="thumbnail" data-name="D">
+    <img src="google.png" class="thumbnail" data-name="E"> 
+
+    <!--여기에는 id값을 지정해 주면 안됨. hidden은 사용자에게는 보이지 않음-->
+    <input type="hidden" name="imgName" value="A">
+    <input type="hidden" name="imgName" value="B">
+    <input type="hidden" name="imgName" value="C">
+    <input type="hidden" name="imgName" value="D">
+    <input type="hidden" name="imgName" value="E">
+</body>
+
+</html>
