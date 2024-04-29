@@ -1,0 +1,5 @@
+INDEX VERSION 1.4+/Users/joyebin/coding/java/eclipse self study/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1538031993.index
+2089348824.index
+4201432946.index
+3047350357.index

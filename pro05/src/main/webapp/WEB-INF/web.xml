@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>pro005</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+
+	<!-- 서블릿 등록 -->
+	<servlet>
+		<servlet-name>aaa</servlet-name>
+		<!-- 원래는 패키지명까지 들어가 있는 것이 풀네임 -->
+		<servlet-class>sec01.ex01.FirstServlet</servlet-class>
+	</servlet>
+
+	<!-- 서블릿 매핑 -->
+	<!-- servlet-class : 매핑하고자 하는 servlet 클래스 servlet-name : 개발자가 지정한 servlet 
+		이름 단, <servlet>과 <servlet-mapping> 안에 있는 servlet-name은 같아야 함 url-pattern 
+		: sevlet 매핑 url을 입력 -->
+	<servlet-mapping>
+		<servlet-name>aaa</servlet-name>
+		<url-pattern>/first</url-pattern>
+	</servlet-mapping>
+
+	<!-- 서블릿 등록 -->
+	<servlet>
+		<servlet-name>bbb</servlet-name>
+		<servlet-class>sec01.ex01.SecondServlet</servlet-class>
+	</servlet>
+
+	<!-- 서블릿 매핑 -->
+	<servlet-mapping>
+		<servlet-name>bbb</servlet-name>
+		<url-pattern>/second</url-pattern>
+	</servlet-mapping>
+</web-app>

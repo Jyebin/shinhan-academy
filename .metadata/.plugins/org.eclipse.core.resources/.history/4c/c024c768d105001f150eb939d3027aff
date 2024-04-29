@@ -1,0 +1,53 @@
+package sec01.ex01;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Calculator
+ */
+@WebServlet("/calculator")
+public class Calculator extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	private void process(HttpServletRequest req, HttpServletResponse res) throws Exception{
+		res.setContentType("text/html;charset=utf-8"); //setContentType에다 해줘야 함
+		PrintWriter pw = res.getWriter();
+		pw.println("<h1>계산기</h1>");
+		pw.println("<form action='calculator' method='post'>");
+		pw.println("<input type='text' name=v1'>");
+		pw.println("<select name='op'>");
+		pw.println("<option value='+'>+</option>");
+		pw.println("<option value='-'>-</option>");
+		pw.println("<option value='*'>*</option>");
+		pw.println("<option value='/'>/</option>");
+		pw.println("</select>");
+		pw.println("<input type='text' name='v2' size=3>");
+		pw.println("<input type='submit' name='='>");
+		pw.println("<input type='text' size=3");
+		pw.println("<input type='text' >");
+		pw.println("</form>");
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	//private로 사용하면 안됨 -> httpservlet으로부터 상속된 메소드의 visibility가 reduce될 수 없기 때문. 보통 private면 안보인다고 얘기함
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		process(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		process(request, response);
+	}
+
+}

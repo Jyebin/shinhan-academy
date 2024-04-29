@@ -1,0 +1,8 @@
+INDEX VERSION 1.131+/Users/joyebin/coding/java/eclipse self study/.metadata/.plugins/org.eclipse.jdt.core
+1865797976.index
+2089348824.index
+1538031993.index
+2141416060.index
+3047350357.index
+4201432946.index
+2718975477.index
