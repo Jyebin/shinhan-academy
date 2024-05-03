@@ -3,6 +3,7 @@ package sec01.ex01;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class MemberDAO {
 
 	public MemberDAO() {
 	   try {
-		   Context ctx = new InitialContext();
+		   Context ctx = new InitialContext(); //context객체
 		   Context envContext = (Context)ctx.lookup9"java:/comp/env"); //정해진 것. 환경 값들을 찾는 것
 		   dataFactory = (DataSource) envContext.lookup("jdbc/mysql"); //DataSource형태로 형변환. 원래는 object type이기 때문
 	   }catch(Exception e) {
@@ -76,5 +77,28 @@ public class MemberDAO {
 //			}
 		}
 		return list;
+	}
+	public void addMember(MemberVO memberVO) {
+		try {
+			con = dataFactory.getConnection();
+			String id = memberVO.getId();
+			String pwd = memberVO.getPwd();
+			String name = memberVO.getName();
+			String email = memberVO.getEmail();
+			
+			String query = "insert into testmember";
+			query += "(id,pwd,name,email)";
+			query += " values(?,?,?,?)";
+			System.out.println("prepareStatement: " + query);
+			pstmt = con.PreparedStatement(query);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pwd);
+			pstmt.setString(3, name);
+			pstmt.setString(4, email);
+			pstmt.executeUpdate();
+			pstmt.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
