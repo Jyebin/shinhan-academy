@@ -37,7 +37,7 @@ public class EncoderFilter extends HttpFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		request.setCharacterEncoding("utf-8");
 		chain.doFilter(request, response);
-		//서블렛 도달 전 필터가 먼저 실행됨
+		//서블렛 도달 전 필터가 먼저 실행됨. sql injection, CORS를 여기서 차단하면 됨
 	}
 
 	/**

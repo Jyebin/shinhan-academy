@@ -28,7 +28,7 @@ public class Main extends HttpServlet {
 		} else {
 
 			// 로그인
-			out.print("ㅇㅇㅇ님 안녕하세요");
+			out.print(vo.getName()+"님 안녕하세요");
 			out.print("<a href='login.html'>로그아웃</a>");
 		}
 	}

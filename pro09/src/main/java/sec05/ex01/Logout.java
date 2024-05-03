@@ -1,25 +1,30 @@
 package sec05.ex01;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class Logout
- */
+
 @WebServlet("/logout.do")
 public class Logout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		HttpSession sess = request.getSession();
+		sess.invalidate(); //세션 삭제
+		
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter out = response.getWriter();
+		out.print("<script>");
+		out.print("alert('로그아웃되었습니다.');");
+		out.print("location.href='main.do';");
+		out.print("</script>");
 	}
-
 }
+//dispatcherServlet : 프론트에서 요청 받는 것을 분배해 따로 실행해주는 것

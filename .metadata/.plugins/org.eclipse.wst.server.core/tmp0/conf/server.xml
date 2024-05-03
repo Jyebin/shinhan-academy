@@ -160,7 +160,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="/Users/joyebin/coding/java/eclipse self study/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ROOT" path="" reloadable="false"/><Context docBase="/Users/joyebin/coding/java/eclipse self study/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/pro09" path="/pro09" reloadable="true" source="org.eclipse.jst.jee.server:pro09"/><Context docBase="/Users/joyebin/coding/java/eclipse self study/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/pro11" path="/pro11" reloadable="true" source="org.eclipse.jst.jee.server:pro11"/></Host>
+      <Context docBase="/Users/joyebin/coding/java/eclipse self study/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ROOT" path="" reloadable="false"/><Context docBase="/Users/joyebin/coding/java/eclipse self study/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/pro14" path="/pro14" reloadable="true" source="org.eclipse.jst.jee.server:pro14"/></Host>
     </Engine>
   </Service>
 </Server>
