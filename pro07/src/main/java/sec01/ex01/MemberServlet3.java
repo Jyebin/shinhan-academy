@@ -37,7 +37,7 @@ public class MemberServlet3 extends HttpServlet {
 		  vo.setName(_name);
 		  vo.setEmail(_email);
 		  dao.addMember(vo);
-	  }else if(command!=null && command.equals("delMember")) {
+	  }else if(command != null && command.equals("delMember")) {
 		  String id = request.getParameter("id");
 		  dao.delMember(id);
 	  }
@@ -46,7 +46,7 @@ public class MemberServlet3 extends HttpServlet {
 	  out.print("<table border=1?<tr align='center' bgcolor='lightgreen'>");
 	  out.print("<td>아이디</td><td>비밀번호</td><td>이름</td><td>이메일</td><td>가입일</td><td>삭제<td></tr>");
 	  
-	  for(int i=0;i<list.size();i++) {
+	  for(int i=0; i<list.size(); i++) {
 		  MemberVO memberVO = (MemberVO) list.get(i);
 		  String id = memberVO.getId();
 		  String pwd = memberVO.getPwd();

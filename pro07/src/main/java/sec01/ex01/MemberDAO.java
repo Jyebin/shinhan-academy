@@ -41,7 +41,7 @@ public class MemberDAO {
 		ResultSet rs = null;
 		try {
 			//connDB();
-			String query = "select * from t_member";
+			String query = "select * from testuser";
 			//rs = stmt.executeQuery(query);
 			while (rs.next()) {
 				String id = rs.getString("id");
@@ -86,7 +86,7 @@ public class MemberDAO {
 			String name = memberVO.getName();
 			String email = memberVO.getEmail();
 			
-			String query = "insert into testmember";
+			String query = "insert into testuser";
 			query += "(id,pwd,name,email)";
 			query += " values(?,?,?,?)";
 			System.out.println("prepareStatement: " + query);
