@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="test.Test"%>
 <%@taglib prefix="c" uri=http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
@@ -45,6 +46,9 @@
 	<!-- 경로를 정확하게 써 줘야 함. 서버에서는 c:url을 안씀 -->
 	<fmt:formatNumber value="${price }" />
 	<br>
-	<fmt:formatDate value="${today }" pattern="YY-MM-dd"/>
+	<fmt:formatDate value="${today }" pattern="YY-MM-dd HH:mm:ss" /><br>
+	${test.sum(1,2) }
+	<br>
+	${Test.differ(2,1) }
 </body>
 </html>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri=http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="member.*"%>
 <%@ page import="java.util.*"%>
 <%
@@ -12,14 +13,9 @@ List<MemberVO> list = (List<MemberVO>) request.getAttribute("list");
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-	for (int i = 0; i < list.size(); i++) {
-	%>
-	<%=list.get(i).getId()%>
-	<%=list.get(i).getName()%>
-	<%
-	}
-	%>
+	<c:forEach items="${list }" var="member"> <!-- for문 대신 사용. 코드가 더 깔끔해짐 -->
+		${member.id } ${member.name }<br>
+</c:forEach>
 
 </body>
 </html>
