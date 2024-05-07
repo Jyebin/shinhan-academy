@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ page import="member.*"%>
-<%@ page import="java.util.*"%>
+    pageEncoding="UTF-8"%>
+<%@ page import="member.*" %>
+<%@ page import="java.util.*" %>
 <%
-List<MemberVO> list = (List<MemberVO>) request.getAttribute("list");
+List<MemberVO> list = (List<MemberVO>)request.getAttribute("list");
 %>
 <!DOCTYPE html>
 <html>
@@ -12,14 +12,12 @@ List<MemberVO> list = (List<MemberVO>) request.getAttribute("list");
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-	for (int i = 0; i < list.size(); i++) {
-	%>
-	<%=list.get(i).getId()%>
-	<%=list.get(i).getName()%>
-	<%
-	}
-	%>
-
+<% for (int i=0; i<list.size(); i++) { %>
+	<%=list.get(i).getId() %> <%=list.get(i).getName() %><br>
+<% } %>
 </body>
 </html>
+
+
+
+

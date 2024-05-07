@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri=http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="member.*"%>
+<%@ page import="test.*"%>
 <%@ page import="java.util.*"%>
 <%
-List<MemberVO> list = (List<MemberVO>) request.getAttribute("list");
+List<Test> list = (List<Test>) request.getAttribute("list");
 %>
 <!DOCTYPE html>
 <html>
