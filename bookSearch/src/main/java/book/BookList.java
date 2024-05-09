@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import util.NaverAPI;
 
-@WebServlet("/book.list.do")
+@WebServlet("/book/list.do")
 public class BookList extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
