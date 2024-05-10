@@ -1,0 +1,13 @@
+package chapter04;
+
+import chapter02.MemberService;
+
+public class BoardServiceImpl implements MemberService {
+
+	@Override
+	public void regist() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

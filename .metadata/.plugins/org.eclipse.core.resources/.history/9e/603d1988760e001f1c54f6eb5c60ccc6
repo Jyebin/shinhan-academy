@@ -1,0 +1,13 @@
+package chapter05;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class MemberController {
+	@RequestMapping("/member/index.do") //요청을 mapping시키는 것
+	public String index() {
+		System.out.println("index");
+		return "member/index"; //views안의 member안의 jsp
+	}
+}

@@ -1,0 +1,17 @@
+package chapter03;
+
+public class MemberServiceImpl implements MemberService { // 외부에서 MemberDAO 객체를 주입해 주는 코드
+
+	MemberDAO dao;
+
+	public void setMemberDAO(MemberDAO dao) {
+		this.dao = dao;
+	}
+
+	@Override
+	public void regist() {
+		//MemberDAO dao = new MemberDAO();
+		dao.regist();
+	}
+
+}

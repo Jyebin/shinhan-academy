@@ -7,7 +7,9 @@ public class MainByXml {
 	public static void main(String[] args) {
 		// bean 설정파일(xml)을 읽어들임
 		// 설정된 설정값으로 bean(객체) 생성 후 container에 저장
-		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("chapter01/beans.xml");
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("chapter01/beans.xml"); // xml을 읽어들이는
+																										// 클래스. 객체 생성 시
+																										// spring이 읽어들임
 
 		// 컨테이너에서 꺼내기(id로 꺼내기)
 		Person p = (Person) ctx.getBean("person");
@@ -16,14 +18,15 @@ public class MainByXml {
 		// 싱글톤 객체
 		Person p2 = (Person) ctx.getBean("person");
 		System.out.println(p2);
+		System.out.println(p == p2); // true가 나옴. 같은 객체임
 
 		Person p3 = ctx.getBean("person", Person.class); // 형변환을 하지 않아도 Person 타입으로 형 변환을 해 줌
+		//Person.class라는 type을 넣어 준 것
 		System.out.println(p3);
-		
 		System.out.println(p3.getName());
-		
-		Person p4 = ctx.getBean("person2",Person.class);
-		System.out.println(p==p4);
+
+		Person p4 = ctx.getBean("person2", Person.class);
+		System.out.println(p == p4);
 	}
 
 }

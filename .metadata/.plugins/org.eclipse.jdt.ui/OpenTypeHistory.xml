@@ -1,2 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+    <typeInfo handle="=spring2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;chapter02{MemberDAO.java[MemberDAO" modifiers="513" timestamp="1715238229000"/>
+    <typeInfo handle="=spring2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;chapter02{MemberService.java[MemberService" modifiers="513" timestamp="1715238481000"/>
+</typeInfoHistroy>
