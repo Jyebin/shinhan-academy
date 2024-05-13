@@ -1,0 +1,11 @@
+package chapter06.excer;
+
+public class CalculatorImpl implements Calculator {
+
+	@Override
+	public long factorial(int num) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

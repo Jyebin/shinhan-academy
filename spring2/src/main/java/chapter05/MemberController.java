@@ -1,13 +1,19 @@
 package chapter05;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MemberController {
@@ -75,13 +81,40 @@ public class MemberController {
 		return "member/param1";
 	}
 
-	// 4. @PathVariable
+	// 4. @PathVariabl. 경로가 변수로 처리되는 것. {}안의 값이 달라짐.
 	// /member/view/kim -> kim 값이 id 변수에 저장
 	@GetMapping("/view/{id}/{name}") // 경로에 파라미터가 들어 있음. ex)Tstory
 	public String parma4(@PathVariable String id, @PathVariable String name) {
 		System.out.println("id:" + id);
 		System.out.println("name:" + name);
 		return "member/param1";
+	}
+//	
+//	// /member/event.do
+//	@GetMapping("member/event.do")
+//	public void event() {
+//		
+//	}
+	
+	@GetMapping("/save.do")
+	public String save(HttpServletRequest req, Model model) {
+		
+		//request 저장
+		req.setAttribute("name", "홍길동");
+		model.addAttribute("email","hong@gmail.com");
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/member/save");
+		mav.addObject("id","hong");
+		
+		// session 저장
+		HttpSession sess = req.getSession();
+		Map<String, Object> map = new HashMap<>();
+		map.put("name", "이순신");
+		map.put("age", 40);
+		map.put("id", "");
+		sess.setAttribute("login",map);
+		
+		return "/member/save";
 	}
 
 }

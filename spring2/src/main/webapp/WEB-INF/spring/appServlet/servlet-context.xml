@@ -23,7 +23,7 @@
 	<beans:bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
-		<beans:property name="suffix" value=".jsp" />
+		<beans:property name="suffix" value=".jsp" /><!-- 만약 viewname을 abc라고 하면 => /WEB-INF/views/가 prefix, abc.jsp에서의 .jsp가 surfix가 됨. 이 역할을 viewResolver가 해 줌. 전체 구조 그림에서의 6번 과정임 -->
 	</beans:bean>
 
 	<context:component-scan

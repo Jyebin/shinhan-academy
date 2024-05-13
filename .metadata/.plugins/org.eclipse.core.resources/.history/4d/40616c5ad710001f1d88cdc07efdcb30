@@ -1,0 +1,15 @@
+package chapter06.aop;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import chapter06.excer.Calculator;
+import chapter06.excer.CalculatorImpl;
+
+@Configuration
+public class BeanConfig {
+	@Bean
+	public Calculator calculator() {
+		return new CalculatorImpl();
+	}
+}
