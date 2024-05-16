@@ -1,0 +1,25 @@
+package chapter07;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class StudentController {
+
+	@Autowired
+	private StudentService service;
+
+	@GetMapping("/student/index.do")
+	public String index(Model model) {
+		List<StudentVO> list = service.all();
+		//model.addAttribute("list", list); // jsp에서 list라는 이름으로 꺼낼 수 있음
+
+		return "student/index";
+
+	}
+
+}

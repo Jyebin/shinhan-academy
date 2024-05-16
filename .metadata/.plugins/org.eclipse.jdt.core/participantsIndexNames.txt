@@ -1,6 +1,8 @@
 INDEX VERSION 1.131
 /Users/joyebin/Desktop/spring/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/425247519.index
 /spring2/src/main/java
+/Users/joyebin/Desktop/spring/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1688004593.index
+/spring2/src/main/java
 /Users/joyebin/Desktop/spring/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1011998563.index
 /pro17/src/main/java
 /Users/joyebin/Desktop/spring/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/57637235.index

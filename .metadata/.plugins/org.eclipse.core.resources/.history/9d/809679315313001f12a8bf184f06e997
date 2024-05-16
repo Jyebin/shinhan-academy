@@ -1,0 +1,12 @@
+package chapter09;
+
+import java.sql.Timestamp;
+
+public class MemberVO {
+	private String id;
+	private String name;
+	private String pwd;
+	private String email;
+	private Timestamp joinDate;
+	private boolean pass;
+}

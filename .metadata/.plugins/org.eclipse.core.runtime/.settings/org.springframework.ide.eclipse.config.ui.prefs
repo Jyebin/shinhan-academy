@@ -1,5 +1,6 @@
 //com.springsource.config.ui.prefs.activePageIndex\:/spring2/src/main/java/chapter01/beans.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/spring2/src/main/java/chapter02/beans.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/spring2/src/main/java/chapter06/AOPTest.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/spring2/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/spring2/src/main/webapp/WEB-INF/spring/root-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
 eclipse.preferences.version=1

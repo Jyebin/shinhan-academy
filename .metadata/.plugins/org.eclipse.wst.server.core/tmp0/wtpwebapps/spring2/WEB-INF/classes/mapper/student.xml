@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="student">
+	<resultMap type="chapter07.StudentVO" id="svo">
+		<result column="grade" property="year"/>
+	</resultMap>
+	<sql id="searchSql">
+		<where>
+			<if test="searchWord != null and searchWord != ''">
+				<if test="searchType == 'all'">
+					name LIKE '%${searchWord}%' OR id LIKE '%${searchWord}%'
+				</if>
+				<if test="searchType != 'all'">
+					${searchType} LIKE '%${searchWord}%'
+				</if>
+			</if>
+			<if test="searchGrade > 0">
+				AND grade = #{searchGrade}
+			</if>
+			<if test="searchMajor != null">
+				AND major1 IN
+				<foreach collection="searchMajor" open="(" close=")" separator="," item="m">
+					#{m}
+				</foreach>
+			</if>
+		</where>
+	</sql>
+	<select id="count" parameterType="chapter07.StudentVO" resultType="int">
+		SELECT COUNT(*) FROM student
+		<include refid="searchSql"/>
+	</select>
+	<select id="all" resultType="chapter07.StudentVO" parameterType="chapter07.StudentVO">
+		SELECT * FROM student
+		<include refid="searchSql"/>
+	</select>
+	<select id="view" resultType="chapter07.StudentVO" parameterType="int">
+		SELECT * FROM student WHERE studno = #{xcbxcbxcvb}
+	</select>
+	<select id="all2" resultType="map" parameterType="map">
+		SELECT * FROM student
+		<include refid="searchSql"/>
+	</select>
+</mapper>

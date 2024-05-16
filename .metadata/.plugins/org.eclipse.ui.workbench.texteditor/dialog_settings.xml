@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="springframework-version"/>
+		<item key="selection" value="sql"/>
 		<list key="findhistory">
+			<item value="sql"/>
+			<item value="junit"/>
 			<item value="springframework-version"/>
 			<item value="springframework"/>
 		</list>
@@ -15,7 +17,7 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="490"/>
+		<item key="DIALOG_X_ORIGIN" value="478"/>
 		<item key="DIALOG_Y_ORIGIN" value="176"/>
 		<item key="DIALOG_WIDTH" value="292"/>
 		<item key="DIALOG_HEIGHT" value="402"/>

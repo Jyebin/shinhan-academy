@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="chapter09.MemberMapper">
+	<insert id="insert" parameterType="chapter09.MemberVO">
+		insert into member(
+		no, id, pwd, name
+		) values (
+		member_sql.nextval, #{id}, #{pwd}, #{name}
+		)
+		<selectKey order="AFTER" keyProperty="no" resultType="int"> <!-- 위의 코드를 insert 한 후 -->
+			select member_sql.currval from dual
+		</selectKey>
+	</insert>
+	<insert id="insertHobby" parameterType="chapter09.HobbyVO">
+		insert into hobby(
+			member_no,name
+		)values(
+			#{member_no}, #{name}
+		)
+	</insert>
+</mapper>
