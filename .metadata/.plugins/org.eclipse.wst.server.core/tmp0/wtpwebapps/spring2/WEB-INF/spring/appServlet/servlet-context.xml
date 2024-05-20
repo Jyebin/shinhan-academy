@@ -28,7 +28,7 @@
 
 	<context:component-scan
 		base-package="kr.co.test" />
-	<context:component-scan base-package="chapter07" />
+	<context:component-scan base-package="chapter010" />
 
 
 

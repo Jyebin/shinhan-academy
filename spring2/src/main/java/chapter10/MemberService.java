@@ -32,6 +32,7 @@ public class MemberService {
 		}
 		return false;
 	}
+	
 	public int idCheck(String id) {
 		return mapper.idCheck(id);
 	}

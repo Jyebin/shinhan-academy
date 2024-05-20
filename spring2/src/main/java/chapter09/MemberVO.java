@@ -1,16 +1,12 @@
 package chapter09;
 
-import java.sql.Timestamp;
-
 import lombok.Data;
 
 @Data
 public class MemberVO {
-	private String no;
-	private String name;
+	private int no;
+	private String id;
 	private String pwd;
-	private String email;
-	private Timestamp joinDate;
-	private boolean pass;
-	private String[] hobbyName;
+	private String name;
+	private String[] hobbyname;
 }

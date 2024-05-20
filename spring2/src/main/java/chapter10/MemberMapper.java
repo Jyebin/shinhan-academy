@@ -7,4 +7,6 @@ public interface MemberMapper {
 	int insert(MemberVO vo);
 	int insertHobby(HobbyVO vo);
 	int idCheck(String id);
+	MemberVO login(MemberVO vo);
+	MemberVO mypage(int no);
 }

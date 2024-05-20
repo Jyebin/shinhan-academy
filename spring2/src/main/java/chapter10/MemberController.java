@@ -12,6 +12,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class MemberController {
@@ -24,8 +26,14 @@ public class MemberController {
 	private MemberService service;
 
 	@PostMapping("/member.insert.do")
-	public String insert(MemberVO vo) { // @ModelAttribute를 VO안에 써야함
+	public String insert(MemberVO vo, @RequestParam("profile") MultipartFile profile) { // @ModelAttribute를 VO안에 써야함
 		System.out.println(Arrays.toString(vo.getHobbyName()));
+		
+		//파일 저장
+		if(!profile.isEmpty()) { //false여야 실행(비어있지 않으면 = 사용자가 첨부 파일을 첨부 한 경우)
+			System.out.println(profile.getOriginalFilename());
+		}
+		
 		service.insert(vo);
 		// 서블릿으로 응답
 
@@ -41,17 +49,18 @@ public class MemberController {
 		// 이제 jsp에서 호출해야 함
 	}
 
-	@GetMapping("/member/login.do")
-	public String login(MemberVO vo, HttpServletResponse res, HttpSession sess) throws Exception {
+
+	@PostMapping("/member/login.do")
+	public void login(MemberVO vo, HttpServletResponse res, HttpSession sess) throws Exception {
 		MemberVO login = service.login(vo);
 		PrintWriter pw = res.getWriter();
 		res.setContentType("text/html;charset=utf-8");
 		if (login == null) { // 로그인 실패
 			pw.println("<script>");
-			pw.println("alert('아이디 비번이 잘못됐습니다.');");
+			pw.println("alert('아이디 비밀번호가 잘못됬습니다.');");
 			pw.println("history.back();");
 			pw.println("</script>");
-		} else { // 로그인 성공 -> 세션 저장
+		} else { // 로그인 성공 -> 세션 저
 			sess.setAttribute("login", login);
 			res.sendRedirect("event.do");
 		}
@@ -60,7 +69,7 @@ public class MemberController {
 
 	@GetMapping("/member/mypage.do")
 	public String mypage(Model model, HttpSession sess) {
-		int no = ((MemberVO) sess.getAttribute("login")).getNo();
+		int no = ((MemberVO)sess.getAttribute("login")).getNo();
 		MemberVO data = service.mypage(no);
 		model.addAttribute("data", data);
 		return "/member/mypage";

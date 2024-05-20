@@ -19,7 +19,7 @@ public class MemberController {
 
 	@PostMapping("/member.insert.do")
 	public String insert(MemberVO vo) { //@ModelAttribute 
-		System.out.println(Arrays.toString(vo.getHobbyName()));
+		System.out.println(Arrays.toString(vo.getHobbyname()));
 		service.insert(vo); // 파라미터를 받아 insert를 호출하는 것이 주 목적
 		return "";
 	}

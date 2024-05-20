@@ -21,7 +21,7 @@ public class MemberService {
 			HobbyVO hvo = new HobbyVO();
 			//member 테이블의 pk가 없는데 가져오는 문제
 			hvo.setMember_no(vo.getNo());
-			for(String name : vo.getHobbyName()) {
+			for(String name : vo.getHobbyname()) {
 				hvo.setName(name);
 				mapper.insertHobby(hvo);
 			}
