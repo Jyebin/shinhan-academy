@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="chapter10.MemberMapper">
+	<insert id="insert" parameterType="chapter10.MemberVO">
+		insert into member(
+		no, id, pwd, name
+		) values (
+		member_sql.nextval,
+		#{id}, #{pwd}, #{name}
+		)
+		<!-- currval은 내 세션을 기준으로 하기 때문에 매우 정확함. 쇼핑몰 시에도 이거를 사용해서 개발 해 주어야 함 -->
+		<selectKey order="AFTER" keyProperty="no" resultType="int"> <!-- 위의 코드를 insert 한 후 -->
+			select member_sql.currval from dual <!-- 여기서 max+1로 가져오는 것은 안전하지 않음 -->
+			<!-- 실행결과 : 정수, 속성(keyProperty) : 파라미터에 있음 -->
+		</selectKey>
+	</insert>
+	<insert id="insertHobby" parameterType="chapter10.HobbyVO">
+		insert into hobby(
+		member_no,name
+		)values(
+		#{member_no}, #{name}
+		)
+	</insert>
+	<select id="idCheck" parameterType="String" resultType="int">
+		select count(*) from member where id=#{id}
+	</select>
+</mapper>

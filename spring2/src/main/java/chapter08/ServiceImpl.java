@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ServiceImpl implements StudentService {
     @Autowired
-    private StudentMapper mapper;
+    private StudentMapper mapper; //객체를 주입받음 -> 우리는 실행만 하면 됨
     
     @Override
     public List<StudentVO> all(StudentVO vo) {

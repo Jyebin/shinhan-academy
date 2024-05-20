@@ -24,7 +24,7 @@
       </init-param>
       <init-param>
          <param-name>contextConfigLocation</param-name>
-         <param-value>chapter09.MvcConfig</param-value>
+         <param-value>chapter10.MvcConfig</param-value>
       </init-param>
 <!--       <init-param> -->
 <!--          <param-name>contextConfigLocation</param-name> -->

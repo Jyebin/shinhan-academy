@@ -6,14 +6,22 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="sql"/>
+		<item key="selection" value="chapter10"/>
 		<list key="findhistory">
+			<item value="chapter09"/>
+			<item value="insert"/>
+			<item value="serv"/>
+			<item value="lombok"/>
+			<item value="lom"/>
+			<item value="취미"/>
+			<item value="ojdbc"/>
 			<item value="sql"/>
 			<item value="junit"/>
 			<item value="springframework-version"/>
 			<item value="springframework"/>
 		</list>
 		<list key="replacehistory">
+			<item value="chapter10"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

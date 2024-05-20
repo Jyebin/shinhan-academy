@@ -1,5 +1,0 @@
-package chapter02;
-@Configuration
-public class BeanConfig {
-
-}
