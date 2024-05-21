@@ -35,7 +35,7 @@
 </head>
 <body>
 	<h1>회원 등록</h1>
-	<form action="insert.do" method="post" enctype="multipart-form/data" onsubmit=idCheck()>
+	<form action="insert.do" method="post" enctype="multipart/form-data" onsubmit=idCheck()>
 		<!-- 데이터를 전송해 db에 전송할 url -->
 		아이디 : <input type="text" name="id">아이디<br> 
 		비밀번호 : <input type="text" name="pwd">비밀번호<br> 
