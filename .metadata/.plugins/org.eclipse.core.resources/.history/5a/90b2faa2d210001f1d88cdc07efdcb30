@@ -1,5 +1,0 @@
-package chapter06.excer;
-
-public interface Calculator {
-
-}

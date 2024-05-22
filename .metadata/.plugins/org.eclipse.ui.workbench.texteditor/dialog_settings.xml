@@ -6,8 +6,13 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="chapter10"/>
+		<item key="selection" value="rose"/>
 		<list key="findhistory">
+			<item value="rose"/>
+			<item value="upload"/>
+			<item value="file"/>
+			<item value="log4jdbc"/>
+			<item value="log4"/>
 			<item value="chapter09"/>
 			<item value="insert"/>
 			<item value="serv"/>
@@ -18,7 +23,6 @@
 			<item value="sql"/>
 			<item value="junit"/>
 			<item value="springframework-version"/>
-			<item value="springframework"/>
 		</list>
 		<list key="replacehistory">
 			<item value="chapter10"/>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <libraryInfos>
-    <libraryInfo home="/Users/joyebin/Library/Java/JavaVirtualMachines/corretto-11.0.18/Contents/Home" version="11.0.18"/>
     <libraryInfo home="/Users/joyebin/Library/Java/JavaVirtualMachines/corretto-1.8.0_392/Contents/Home" version="1.8.0_392">
         <bootpath>
             <entry path="/Users/joyebin/Library/Java/JavaVirtualMachines/corretto-1.8.0_392/Contents/Home/jre/lib/resources.jar"/>
@@ -24,7 +23,6 @@
             <entry path="/Users/joyebin/Library/Java/JavaVirtualMachines/corretto-1.8.0_392/Contents/Home/jre/lib/endorsed"/>
         </endorsedDirs>
     </libraryInfo>
-    <libraryInfo home="/Library/Java/JavaVirtualMachines/microsoft-11.jdk/Contents/Home" version="11.0.16.1"/>
     <libraryInfo home="/opt/homebrew/Cellar/openjdk@17/17.0.10/libexec/openjdk.jdk/Contents/Home" version="17.0.10"/>
     <libraryInfo home="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home" version="1.8.0_302">
         <bootpath>
@@ -50,4 +48,5 @@
         </endorsedDirs>
     </libraryInfo>
     <libraryInfo home="/Library/Java/JavaVirtualMachines/jdk-18.0.2.jdk/Contents/Home" version="18.0.2"/>
+    <libraryInfo home="/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home" version="11.0.22"/>
 </libraryInfos>
