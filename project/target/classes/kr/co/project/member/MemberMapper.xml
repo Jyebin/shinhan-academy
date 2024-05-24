@@ -3,19 +3,19 @@
 <mapper namespace="kr.co.project.member.MemberMapper">
 	<insert id="regist"
 		parameterType="kr.co.project.member.MemberVO">
-		insert into member(
-		no, email, pwd,
-		name, gender, birthday,
-		hp, zipcode,
-		addr1,
-		addr2, regdate, state
+		INSERT INTO member(
+			no, email, pwd,
+			name, gender, birthday,
+			hp, zipcode,
+			addr1,
+			addr2, regdate, state
 		) values (
-		#{no}, #{email}, MD5(#{pwd}),
-		#{name},
-		#{gender}, #{birthday},
-		#{hp}, #{zipcode}, #{addr1},
-		#{addr2},
-		#{regdate}, #{state}
+			#{no}, #{email}, MD5(#{pwd}),
+			#{name},
+			#{gender}, #{birthday},
+			#{hp}, #{zipcode}, #{addr1},
+			#{addr2},
+			#{regdate}, #{state}
 		)
 		<selectKey order="AFTER" keyProperty="no" resultType="int">
 			select
