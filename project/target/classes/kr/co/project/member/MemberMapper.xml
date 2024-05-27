@@ -1,36 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.co.project.member.MemberMapper">
-	<insert id="regist"
-		parameterType="kr.co.project.member.MemberVO">
-		INSERT INTO member(
-			no, email, pwd,
-			name, gender, birthday,
-			hp, zipcode,
-			addr1,
-			addr2, regdate, state
-		) values (
-			#{no}, #{email}, MD5(#{pwd}),
-			#{name},
-			#{gender}, #{birthday},
-			#{hp}, #{zipcode}, #{addr1},
-			#{addr2},
-			#{regdate}, #{state}
+	<insert id="regist" parameterType="kr.co.project.member.MemberVO">
+		INSERT INTO member (
+			email, pwd, name, gender, 
+			birthday, hp, zipcode, addr1, 
+			addr2, regdate, state 
+		) VALUES (
+			#{email}, MD5(#{pwd}), #{name}, #{gender}, 
+			#{birthday}, #{hp}, #{zipcode}, #{addr1}, 
+			#{addr2}, NOW(), #{state}
 		)
 		<selectKey order="AFTER" keyProperty="no" resultType="int">
-			select
-			last_insert_id()
+			SELECT LAST_INSERT_ID()
 		</selectKey>
 	</insert>
-
 	<select id="emailCheck" parameterType="String" resultType="int">
-		select
-		count(*) from member where email=#{email}
+		SELECT COUNT(*) FROM member WHERE email=#{email}
 	</select>
-
-	<select id="login" parameterType="kr.co.project.member.MemberVO"
-		resultType="kr.co.project.member.MemberVO">
-		select * from member where email=#{email} and pwd= MD5(#{pwd})
+	
+	<select id="login" parameterType="kr.co.project.member.MemberVO" resultType="kr.co.project.member.MemberVO">
+		SELECT * FROM member WHERE email=#{email} AND pwd=MD5(#{pwd})
 	</select>
-
+	
+	<select id="detail" resultType="kr.co.project.member.MemberVO" parameterType="int">
+		SELECT * FROM member WHERE no=#{no}
+	</select>
+	
+	<update id="update" parameterType="kr.co.project.member.MemberVO">
+		UPDATE member SET
+			<if test="pwd != ''"> <!-- pwd가 빈 문자열이 아닐 때에만 비밀번호를 수정하는 로직을 수행함. 
+			이 로직을 수행하지 않으면 기존에 있던 비밀번호 값이 null값으로 저장되기 때문에 다시 로그인 할 때 로그인이 되지 않음 -->
+			pwd = MD5(#{pwd}),
+			</if>
+			name = #{name},
+			gender = #{gender},
+			birthday = #{birthday},
+			hp = #{hp},
+			zipcode = #{zipcode},
+			addr1 = #{addr1},
+			addr2 = #{addr2}	
+		WHERE no = #{no}
+	</update>
+	
+	
 </mapper>

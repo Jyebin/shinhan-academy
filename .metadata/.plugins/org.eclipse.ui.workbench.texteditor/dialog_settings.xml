@@ -6,8 +6,11 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="rose"/>
+		<item key="selection" value="회원가입"/>
 		<list key="findhistory">
+			<item value="회원가입"/>
+			<item value="goSave"/>
+			<item value="add"/>
 			<item value="rose"/>
 			<item value="upload"/>
 			<item value="file"/>
@@ -20,9 +23,6 @@
 			<item value="lom"/>
 			<item value="취미"/>
 			<item value="ojdbc"/>
-			<item value="sql"/>
-			<item value="junit"/>
-			<item value="springframework-version"/>
 		</list>
 		<list key="replacehistory">
 			<item value="chapter10"/>

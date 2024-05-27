@@ -15,29 +15,29 @@ import lombok.extern.log4j.Log4j;
 
 @Log4j
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { config.MvcConfig.class })
+@ContextConfiguration(classes = {config.MvcConfig.class})
 @WebAppConfiguration
 public class ReplyTest {
+	
 	@Autowired
 	ReplyMapper mapper;
-
+	
 	@Test
 	public void regist() {
-		for (int i = 0; i < 100; i++) {
+		for (int i=0; i<100; i++) {
 			ReplyVO vo = new ReplyVO();
-			vo.setTitle("제목" + i);
-			vo.setContent("내용" + i);
+			vo.setTitle("제목"+i);
+			vo.setContent("내용"+i);
 			mapper.insert(vo);
 			mapper.updateGno(vo.getNo());
 		}
-
 	}
-
+	
 	@Test
 	public void updateGno() {
 		mapper.updateGno(1);
 	}
-
+	
 	@Test
 	public void reply() {
 		ReplyVO vo = new ReplyVO();
@@ -46,16 +46,15 @@ public class ReplyTest {
 		vo.setNested(0);
 		vo.setTitle("100번의 답변");
 		vo.setContent("100번의 답변");
-		vo.setOno(vo.getOno() + 1);
-
+		
 		// ono 수정
 		mapper.updateOno(vo);
-
-		vo.setOno(vo.getOno() + 1);
-		vo.setNested(vo.getNested() + 1);
+		
+		vo.setOno(vo.getOno()+1);
+		vo.setNested(vo.getNested()+1);
 		mapper.insert(vo);
 	}
-
+	
 	@Test
 	public void list() {
 		ReplyVO vo = new ReplyVO();
@@ -68,4 +67,5 @@ public class ReplyTest {
 //		}
 		list.stream().forEach(v -> System.out.println(v));
 	}
+	
 }

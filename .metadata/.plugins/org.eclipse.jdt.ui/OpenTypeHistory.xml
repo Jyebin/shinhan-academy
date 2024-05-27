@@ -3,4 +3,6 @@
     <typeInfo handle="=spring2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;chapter02{MemberDAO.java[MemberDAO" modifiers="513" timestamp="1715238229000"/>
     <typeInfo handle="=spring2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;chapter02{MemberService.java[MemberService" modifiers="513" timestamp="1715238481000"/>
     <typeInfo handle="=spring2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;chapter06.excer{Calculator.java[Calculator" modifiers="513" timestamp="1715568233000"/>
+    <typeInfo handle="=project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr.co.project.member{MemberService.java[MemberService" modifiers="513" timestamp="1716431856000"/>
+    <typeInfo handle="=project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr.co.project.reply{ReplyService.java[ReplyService" modifiers="513" timestamp="1716520131000"/>
 </typeInfoHistroy>
